@@ -9,6 +9,11 @@ const openai = new OpenAIApi(configuration);
 async function apiCall() {
   const completion = await openai.createChatCompletion({
     model: 'gpt-3.5-turbo',
+    // temperature: 0.7,
+    max_tokens: 1000,
+    // top_p: 1,
+    // frequency_penalty: 0,
+    // presence_penalty: 0,
     messages: [
       {
         role: 'system',
