@@ -1,17 +1,17 @@
+require('dotenv').config();
 const { Configuration, OpenAIApi } = require('openai');
-const OPENAI_API_KEY = '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';
 
 const configuration = new Configuration({
-  apiKey: OPENAI_API_KEY,
+  apiKey: process.env.OPENAI_API_KEY,
 });
 const openai = new OpenAIApi(configuration);
 
 async function apiCall() {
-  const completion = await openai.createCompletion({
-    model: 'text-davinci-003',
-    prompt: 'Hello world',
+  const completion = await openai.createChatCompletion({
+    model: 'gpt-3.5-turbo',
+    messages: [{ role: 'user', content: 'Hello world' }],
   });
-  console.log(completion.data.choices[0].text);
+  console.log(completion.data.choices[0].message);
 }
 
 apiCall();
