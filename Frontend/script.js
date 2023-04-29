@@ -19,7 +19,7 @@ const sendMessage = async function (event) {
   const chatText = chatInput.value;
   if (!chatText) return;
 
-  appendMessage('User', 'right', chatText);
+  appendMessage(userName, 'right', chatText);
   chatInput.value = '';
 
   const response = await fetch('http://localhost:3000/treasureMealPlanner', {

@@ -41,7 +41,11 @@ app.post('/treasureMealPlanner', async function (req, res) {
     },
     {
       role: 'user',
-      content: 'Can you help me my diet?',
+      content: `My name is ${userName} and I am ${userAge} years old. My weight is ${userWeight} and my height is ${userHeight}. My daily calorie goal is ${calories}, and I follow ${restrictions}. Could you help me create a meal plan for the next ${numDays} days?`,
+    },
+    {
+      role: 'assistant',
+      content: `I understand that your name is ${userName} and you are ${userAge} years old. Your weight is ${userWeight}, height is ${userHeight}, and your daily calorie goal is ${calories}. You are looking for a ${restrictions} meal plan for the next ${numDays} days. Please let me know if you have any specific questions or preferences regarding the meal plan.`,
     },
   ];
 
