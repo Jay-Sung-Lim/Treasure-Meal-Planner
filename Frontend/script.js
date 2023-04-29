@@ -6,28 +6,11 @@
 
 // TODO: Generate meal plan based on user input
 
-async function getMealPlan() {
-  try {
-    const response = await fetch('http://localhost:3000/treasureMealPlanner', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({ name: 'Jaesung' }),
-    });
-    const data = await response.json();
-    console.log(data);
-    return data;
-  } catch (error) {
-    console.error(error);
-  }
-}
-
+const chatBox = document.querySelector('.chat-box');
 const chatForm = document.querySelector('.chat-inputarea');
 const chatInput = document.querySelector('.chat-input');
-const chatBox = document.querySelector('.chat-box');
 
-chatForm.addEventListener('submit', (event) => {
+const sendMessage = async function (event) {
   event.preventDefault();
 
   const chatText = chatInput.value;
@@ -36,8 +19,33 @@ chatForm.addEventListener('submit', (event) => {
   appendMessage('User', 'right', chatText);
   chatInput.value = '';
 
-  chatResponse();
-});
+  const response = await fetch('http://localhost:3000/treasureMealPlanner', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+      message: chatInput.value,
+    }),
+  });
+
+  const data = await response.json();
+
+  const chatGptResponse = `
+  <div class="chat left-chat">
+    <div class="chat-bubble">
+      <div class="chat-info">
+        <div class="chat-info-name">Treasure Meal Planner</div>
+      </div>
+      <p class="message-text">${data.assistant}</p>
+    </div>
+  </div>
+  `;
+  chatBox.insertAdjacentHTML('beforeend', chatGptResponse);
+  chatBox.scrollTop += 500;
+};
+
+chatForm.addEventListener('submit', sendMessage);
 
 // 유저 인풋 저장
 function appendMessage(name, side, text) {
@@ -54,6 +62,3 @@ function appendMessage(name, side, text) {
   chatBox.insertAdjacentHTML('beforeend', chatHTML);
   chatBox.scrollTop += 500;
 }
-
-// chatGPT 답변
-function chatResponse() {}
