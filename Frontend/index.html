@@ -7,14 +7,15 @@
     <title>Treasure Meal Planner</title>
     <link rel="stylesheet" href="style.css" />
     <script src="script.js" defer></script>
+    <script src="https://kit.fontawesome.com/740255848a.js" crossorigin="anonymous"></script>
   </head>
   <body>
-    <header>
+    <!-- <header>
       <h1>Welcome to Treasure Meal Planner</h1>
       <img src="imgs/Food in Treasurebox DALL·E 2023-04-29 12.45.14.png" alt="Food in Treasurebox" />
     </header>
 
-    <form>
+    <div class="input-container">
       <label for="days-input">Number of Days:</label>
       <input type="text" id="days-input" name="days-input" placeholder="Enter Number of Days" />
       <br /><br />
@@ -33,7 +34,34 @@
       <label for="restrictions-input">Dietary Restrictions:</label>
       <input type="text" id="restrictions-input" name="restrictions-input" placeholder="Enter Dietary Restriction" />
       <br /><br />
-      <button type="submit">Generate Meal Plan</button>
-    </form>
+      <button onclick="getMealPlan()">Generate Meal Plan</button>
+    </div> -->
+
+    <section class="chat-container">
+      <main class="chat-box">
+        <div class="chat left-chat">
+          <div class="chat-bubble">
+            <div class="chat-info">
+              <div class="chat-info-name">Treasure Meal Planner</div>
+            </div>
+            <p class="message-text">Hi, welcome to Treasure Meal Planner! How can I help you?</p>
+          </div>
+        </div>
+
+        <div class="chat right-chat">
+          <div class="chat-bubble">
+            <div class="chat-info">
+              <div class="chat-info-name">User</div>
+            </div>
+            <p class="message-text">afsdadfsadfsadadfsafds</p>
+          </div>
+        </div>
+      </main>
+
+      <form class="chat-inputarea">
+        <input type="text" class="chat-input" placeholder="Enter your message..." />
+        <button type="submit" class="send-btn">Send</button>
+      </form>
+    </section>
   </body>
 </html>

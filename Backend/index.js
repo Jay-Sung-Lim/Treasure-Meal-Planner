@@ -21,7 +21,7 @@ app.use(express.json()); // for parsing application/json
 app.use(express.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
 
 // POST method route
-app.get('/treasureMealPlanner', async function (req, res) {
+app.post('/treasureMealPlanner', async function (req, res) {
   const completion = await openai.createChatCompletion({
     model: 'gpt-3.5-turbo',
     // temperature: 0.7,
