@@ -13,6 +13,11 @@ const chatInput = document.querySelector('.chat-input');
 let userMessages = [];
 let assistantMessages = [];
 
+function loading() {
+  document.querySelector('.send-btn i').style.display = 'var(--fa-display,inline-block)';
+  document.querySelector('.send-btn p').style.display = 'none';
+}
+
 const sendMessage = async function (event) {
   event.preventDefault();
 
@@ -41,6 +46,8 @@ const sendMessage = async function (event) {
   });
 
   const data = await response.json();
+  document.querySelector('.send-btn i').style.display = 'none';
+  document.querySelector('.send-btn p').style.display = 'block';
 
   const chatGptResponse = `
   <div class="chat left-chat">
