@@ -19,7 +19,7 @@ const sendMessage = async function (event) {
   const chatText = chatInput.value;
   if (!chatText) return;
 
-  appendMessage(userName, 'right', chatText);
+  appendMessage(userName.value, 'right', chatText);
   chatInput.value = '';
 
   const response = await fetch('http://localhost:3000/treasureMealPlanner', {
@@ -59,7 +59,7 @@ const sendMessage = async function (event) {
 
 chatForm.addEventListener('submit', sendMessage);
 
-// 유저 인풋 저장
+// functions
 function appendMessage(name, side, text) {
   const chatHTML = `
     <div class="chat ${side}-chat">
@@ -77,13 +77,10 @@ function appendMessage(name, side, text) {
 }
 
 function submit() {
-  if (userName === '') {
+  if (userName.value === '') {
     alert('Enter your name');
-    return;
+  } else {
+    document.querySelector('.home-page').style.display = 'none';
+    document.querySelector('.chat-container').style.display = 'flex';
   }
-
-  myInformation = `${userName}`;
-
-  document.querySelector('.home-page').style.display = 'none';
-  document.querySelector('.chat-container').style.display = 'flex';
 }
