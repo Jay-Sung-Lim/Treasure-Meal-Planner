@@ -8,5 +8,32 @@
     <link rel="stylesheet" href="style.css" />
     <script src="script.js" defer></script>
   </head>
-  <body></body>
+  <body>
+    <header>
+      <h1>Welcome to Treasure Meal Planner</h1>
+      <img src="imgs/Food in Treasurebox DALL·E 2023-04-29 12.45.14.png" alt="Food in Treasurebox" />
+    </header>
+
+    <form>
+      <label for="days-input">Number of Days:</label>
+      <input type="text" id="days-input" name="days-input" placeholder="Enter Number of Days" />
+      <br /><br />
+      <label for="age-input">Age Group:</label>
+      <input type="text" id="age-input" name="age-input" placeholder="Enter Your Age Group" />
+      <br /><br />
+      <label for="weight-input">Weight:</label>
+      <input type="text" id="weight-input" name="weight-input" placeholder="Enter Your Weight" />
+      <br /><br />
+      <label for="height-input">Height:</label>
+      <input type="text" id="height-input" name="height-input" placeholder="Enter Your Height" />
+      <br /><br />
+      <label for="calories-input">Daily Calorie Goal:</label>
+      <input type="text" id="calories-input" name="calories-input" placeholder="Enter Daily Calorie Goal" />
+      <br /><br />
+      <label for="restrictions-input">Dietary Restrictions:</label>
+      <input type="text" id="restrictions-input" name="restrictions-input" placeholder="Enter Dietary Restriction" />
+      <br /><br />
+      <button type="submit">Generate Meal Plan</button>
+    </form>
+  </body>
 </html>
