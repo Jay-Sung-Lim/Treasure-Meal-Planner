@@ -22,10 +22,13 @@ app.use(express.urlencoded({ extended: true })); // for parsing application/x-ww
 
 // POST method route
 app.post('/treasureMealPlanner', async function (req, res) {
+  let { userMessages, assistantMessages } = req.body;
+  console.log(userMessages);
+  console.log(assistantMessages);
   const completion = await openai.createChatCompletion({
     model: 'gpt-3.5-turbo',
     // temperature: 0.7,
-    max_tokens: 1000,
+    max_tokens: 500,
     // top_p: 1,
     // frequency_penalty: 0,
     // presence_penalty: 0,
@@ -53,7 +56,7 @@ app.post('/treasureMealPlanner', async function (req, res) {
   });
   console.log(completion.data.choices[0].message);
 
-  res.send(completion.data.choices[0].message);
+  res.json(completion.data.choices[0].message);
 });
 
 app.listen(3000);
