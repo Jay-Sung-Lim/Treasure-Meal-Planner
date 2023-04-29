@@ -10,34 +10,39 @@
     <script src="https://kit.fontawesome.com/740255848a.js" crossorigin="anonymous"></script>
   </head>
   <body>
-    <!-- <header>
-      <h1>Welcome to Treasure Meal Planner</h1>
-      <img src="imgs/Food in Treasurebox DALL·E 2023-04-29 12.45.14.png" alt="Food in Treasurebox" />
-    </header>
+    <div class="home-page">
+      <header class="header">
+        <h1>Welcome to Treasure Meal Planner</h1>
+        <img id="home-img" src="imgs/Food in Treasurebox DALL·E 2023-04-29 12.45.14.png" alt="Food in Treasurebox" />
+      </header>
 
-    <div class="input-container">
-      <label for="days-input">Number of Days:</label>
-      <input type="text" id="days-input" name="days-input" placeholder="Enter Number of Days" />
-      <br /><br />
-      <label for="age-input">Age Group:</label>
-      <input type="text" id="age-input" name="age-input" placeholder="Enter Your Age Group" />
-      <br /><br />
-      <label for="weight-input">Weight:</label>
-      <input type="text" id="weight-input" name="weight-input" placeholder="Enter Your Weight" />
-      <br /><br />
-      <label for="height-input">Height:</label>
-      <input type="text" id="height-input" name="height-input" placeholder="Enter Your Height" />
-      <br /><br />
-      <label for="calories-input">Daily Calorie Goal:</label>
-      <input type="text" id="calories-input" name="calories-input" placeholder="Enter Daily Calorie Goal" />
-      <br /><br />
-      <label for="restrictions-input">Dietary Restrictions:</label>
-      <input type="text" id="restrictions-input" name="restrictions-input" placeholder="Enter Dietary Restriction" />
-      <br /><br />
-      <button onclick="getMealPlan()">Generate Meal Plan</button>
-    </div> -->
+      <div class="input-container">
+        <label for="user-input">User Name:</label>
+        <input type="text" id="user-input" name="user-input" placeholder="Enter User Name" />
+        <br /><br />
+        <label for="days-input">Number of Days:</label>
+        <input type="text" id="days-input" name="days-input" placeholder="Enter Number of Days" />
+        <br /><br />
+        <label for="age-input">Age Group:</label>
+        <input type="text" id="age-input" name="age-input" placeholder="Enter Your Age Group" />
+        <br /><br />
+        <label for="weight-input">Weight:</label>
+        <input type="text" id="weight-input" name="weight-input" placeholder="Enter Your Weight" />
+        <br /><br />
+        <label for="height-input">Height:</label>
+        <input type="text" id="height-input" name="height-input" placeholder="Enter Your Height" />
+        <br /><br />
+        <label for="calories-input">Daily Calorie Goal:</label>
+        <input type="text" id="calories-input" name="calories-input" placeholder="Enter Daily Calorie Goal" />
+        <br /><br />
+        <label for="restrictions-input">Dietary Restrictions:</label>
+        <input type="text" id="restrictions-input" name="restrictions-input" placeholder="Enter Dietary Restriction" />
+        <br /><br />
+        <button onclick="submit()" type="submit">Generate Meal Plan</button>
+      </div>
+    </div>
 
-    <section class="chat-container">
+    <section class="chat-container" style="display: none">
       <main class="chat-box">
         <div class="chat left-chat">
           <div class="chat-bubble">

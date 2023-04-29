@@ -1,3 +1,12 @@
+// User Input
+const userName = document.querySelector('#user-input');
+const numDays = document.querySelector('#days-input');
+const userAge = document.querySelector('#age-input');
+const userWeight = document.querySelector('#weight-input');
+const userHeight = document.querySelector('#height-input');
+const calories = document.querySelector('#calories-input');
+const restrictions = document.querySelector('#restrictions-input');
+
 const chatBox = document.querySelector('.chat-box');
 const chatForm = document.querySelector('.chat-inputarea');
 const chatInput = document.querySelector('.chat-input');
@@ -11,6 +20,7 @@ const sendMessage = async function (event) {
   if (!chatText) return;
 
   appendMessage('User', 'right', chatText);
+  chatInput.value = '';
 
   const response = await fetch('http://localhost:3000/treasureMealPlanner', {
     method: 'POST',
@@ -18,7 +28,13 @@ const sendMessage = async function (event) {
       'Content-Type': 'application/json',
     },
     body: JSON.stringify({
-      message: chatInput.value,
+      userName: userName,
+      numDays: numDays,
+      userAge: userAge,
+      userWeight: userWeight,
+      userHeight: userHeight,
+      calories: calories,
+      restrictions: restrictions,
       userMessages: userMessages,
       assistantMessages: assistantMessages,
     }),
@@ -58,4 +74,16 @@ function appendMessage(name, side, text) {
   chatBox.insertAdjacentHTML('beforeend', chatHTML);
   chatBox.scrollTop += 500;
   userMessages.push(chatInput.value);
+}
+
+function submit() {
+  if (userName === '') {
+    alert('Enter your name');
+    return;
+  }
+
+  myInformation = `${userName}`;
+
+  document.querySelector('.home-page').style.display = 'none';
+  document.querySelector('.chat-container').style.display = 'flex';
 }

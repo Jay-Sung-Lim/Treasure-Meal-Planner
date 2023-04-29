@@ -22,9 +22,7 @@ app.use(express.urlencoded({ extended: true })); // for parsing application/x-ww
 
 // POST method route
 app.post('/treasureMealPlanner', async function (req, res) {
-  let { userMessages, assistantMessages } = req.body;
-  console.log(userMessages);
-  console.log(assistantMessages);
+  let { userName, numDays, userAge, userWeight, userHeight, calories, restrictions, userMessages, assistantMessages } = req.body;
   let messages = [
     {
       role: 'system',
@@ -46,6 +44,16 @@ app.post('/treasureMealPlanner', async function (req, res) {
       content: 'Can you help me my diet?',
     },
   ];
+
+  while (userMessages.length != 0 || assistantMessages.length != 0) {
+    if (userMessages.length != 0) {
+      messages.push(JSON.parse('{"role": "user", "content": "' + String(userMessages.shift()).replace(/\n/g, '') + '"}'));
+    }
+
+    if (assistantMessages.length != 0) {
+      messages.push(JSON.parse('{"role": "assistant", "content": "' + String(assistantMessages.shift()).replace(/\n/g, '\\n') + '"}'));
+    }
+  }
 
   const completion = await openai.createChatCompletion({
     model: 'gpt-3.5-turbo',

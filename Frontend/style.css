@@ -1,62 +1,3 @@
-/* Set default font and background color */
-body {
-  font-family: Arial, sans-serif;
-  background-color: #f9f9f9;
-}
-
-header {
-  text-align: center;
-}
-
-header h1 {
-  padding: 10px 0;
-}
-
-header img {
-  width: 200px;
-  height: 200px;
-  border-radius: 50%;
-}
-
-/* Center the form on the page */
-.input-container {
-  margin: 0 auto;
-  width: 50%;
-}
-
-/* Style the input fields and labels */
-label,
-input {
-  display: block;
-  width: 100%;
-  margin-bottom: 10px;
-  font-size: 18px;
-}
-
-input[type='text'],
-input[type='number'] {
-  padding: 10px;
-  border-radius: 5px;
-  border: none;
-  box-shadow: 1px 1px 1px #ccc;
-}
-
-/* Style the submit button */
-button[type='submit'] {
-  padding: 10px 20px;
-  border-radius: 5px;
-  border: none;
-  background-color: #4caf50;
-  color: white;
-  font-size: 18px;
-  cursor: pointer;
-}
-
-button[type='submit']:hover {
-  background-color: #3e8e41;
-}
-
-/* Chat UI */
 :root {
   --body-bg: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
   --chat-container-bg: #fff;
@@ -85,9 +26,28 @@ body {
   background-image: var(--body-bg);
   font-family: Helvetica, sans-serif;
 }
+/* Home page */
+.home-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.header {
+  text-align: center;
+}
+
+#home-img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+}
+
+/* Chat UI */
 
 .chat-container {
-  display: flex;
+  display: none;
   flex-flow: column wrap;
   justify-content: space-between;
   width: 100%;
@@ -196,4 +156,9 @@ body {
 
 .send-btn:hover {
   background: rgb(0, 180, 50);
+}
+
+.message-text {
+  /* Line Break '//n' */
+  white-space: pre-wrap;
 }
