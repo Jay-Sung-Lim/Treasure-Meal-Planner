@@ -1,12 +1,27 @@
 require('dotenv').config();
 const { Configuration, OpenAIApi } = require('openai');
+const express = require('express');
+const app = express();
+// const cors = require('cors');
 
 const configuration = new Configuration({
   apiKey: process.env.OPENAI_API_KEY,
 });
 const openai = new OpenAIApi(configuration);
 
-async function apiCall() {
+// CORS issue
+// let corsOptions = {
+//   origin: '',
+//   credentials: true,
+// };
+// app.use(cors(corsOptions));
+
+// express req.body
+app.use(express.json()); // for parsing application/json
+app.use(express.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
+
+// POST method route
+app.get('/treasureMealPlanner', async function (req, res) {
   const completion = await openai.createChatCompletion({
     model: 'gpt-3.5-turbo',
     // temperature: 0.7,
@@ -32,11 +47,13 @@ async function apiCall() {
       },
       {
         role: 'user',
-        content: 'Can you create 3-day meal plan for an adult who needs to consume 2500 calories per day, but make it lactose-intolerance-friendly?',
+        content: 'Can you create 1-day meal plan for an adult who needs to consume 2500 calories per day, but make it lactose-intolerance-friendly?',
       },
     ],
   });
   console.log(completion.data.choices[0].message);
-}
 
-apiCall();
+  res.send(completion.data.choices[0].message);
+});
+
+app.listen(3000);
