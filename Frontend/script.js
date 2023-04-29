@@ -11,7 +11,6 @@ const sendMessage = async function (event) {
   if (!chatText) return;
 
   appendMessage('User', 'right', chatText);
-  chatInput.value = '';
 
   const response = await fetch('http://localhost:3000/treasureMealPlanner', {
     method: 'POST',
@@ -26,20 +25,20 @@ const sendMessage = async function (event) {
   });
 
   const data = await response.json();
-  assistantMessages.push(data.assistant);
 
   const chatGptResponse = `
-    <div class="chat left-chat">
-      <div class="chat-bubble">
-        <div class="chat-info">
-          <div class="chat-info-name">Treasure Meal Planner</div>
-        </div>
-        <p class="message-text">"${data.assistant}"</p>
-      </div>
+  <div class="chat left-chat">
+  <div class="chat-bubble">
+    <div class="chat-info">
+      <div class="chat-info-name">Treasure Meal Planner</div>
     </div>
+    <p class="message-text">${data.assistant}</p>
+  </div>
+</div>
     `;
   chatBox.insertAdjacentHTML('beforeend', chatGptResponse);
   chatBox.scrollTop += 500;
+  assistantMessages.push(data.assistant);
 };
 
 chatForm.addEventListener('submit', sendMessage);
