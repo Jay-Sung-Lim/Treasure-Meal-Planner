@@ -1,8 +1,9 @@
 require('dotenv').config();
+// const serverless = require('serverless-http');
 const { Configuration, OpenAIApi } = require('openai');
 const express = require('express');
+var cors = require('cors');
 const app = express();
-const cors = require('cors');
 
 const configuration = new Configuration({
   apiKey: process.env.OPENAI_API_KEY,
@@ -10,11 +11,11 @@ const configuration = new Configuration({
 const openai = new OpenAIApi(configuration);
 
 // CORS issue
-// let corsOptions = {
-//   origin: '',
-//   credentials: true,
-// };
-app.use(cors());
+let corsOptions = {
+  origin: '*',
+  credentials: true,
+};
+app.use(cors(corsOptions));
 
 // express req.body
 app.use(express.json()); // for parsing application/json
@@ -73,4 +74,6 @@ app.post('/treasureMealPlanner', async function (req, res) {
   res.json({ assistant: mealPlan });
 });
 
-app.listen(3000);
+app.listen(8080);
+
+// module.exports.handler = serverless(app);

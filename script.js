@@ -24,9 +24,10 @@ const sendMessage = async function (event) {
   appendMessage(userName.value, 'right', chatText);
   chatInput.value = '';
 
-  const response = await fetch('http://localhost:3000/treasureMealPlanner', {
+  const response = await fetch('https://treasure-hacks-385301.appspot.com/treasureMealPlanner', {
     method: 'POST',
     headers: {
+      // 'Access-Control-Allow-Origin': '*',
       'Content-Type': 'application/json',
     },
     body: JSON.stringify({
