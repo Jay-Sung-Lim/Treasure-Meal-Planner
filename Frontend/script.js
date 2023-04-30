@@ -1,10 +1,7 @@
 // User Input
 const userName = document.querySelector('#user-input');
-const numDays = document.querySelector('#days-input');
-const userAge = document.querySelector('#age-input');
 const userWeight = document.querySelector('#weight-input');
 const userHeight = document.querySelector('#height-input');
-const calories = document.querySelector('#calories-input');
 const restrictions = document.querySelector('#restrictions-input');
 
 const chatBox = document.querySelector('.chat-box');
@@ -33,13 +30,10 @@ const sendMessage = async function (event) {
       'Content-Type': 'application/json',
     },
     body: JSON.stringify({
-      userName: userName,
-      numDays: numDays,
-      userAge: userAge,
-      userWeight: userWeight,
-      userHeight: userHeight,
-      calories: calories,
-      restrictions: restrictions,
+      userName: userName.value,
+      userWeight: userWeight.value,
+      userHeight: userHeight.value,
+      restrictions: restrictions.value,
       userMessages: userMessages,
       assistantMessages: assistantMessages,
     }),

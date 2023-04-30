@@ -22,7 +22,7 @@ app.use(express.urlencoded({ extended: true })); // for parsing application/x-ww
 
 // POST method route
 app.post('/treasureMealPlanner', async function (req, res) {
-  let { userName, numDays, userAge, userWeight, userHeight, calories, restrictions, userMessages, assistantMessages } = req.body;
+  let { userName, userWeight, userHeight, restrictions, userMessages, assistantMessages } = req.body;
   let messages = [
     {
       role: 'system',
@@ -41,11 +41,11 @@ app.post('/treasureMealPlanner', async function (req, res) {
     },
     {
       role: 'user',
-      content: `My name is ${userName} and I am ${userAge}. My weight is ${userWeight} and my height is ${userHeight}. My daily calorie goal is ${calories}, and I prefer ${restrictions}. Could you help me create a meal plan for the next ${numDays} days?`,
+      content: `My name is ${userName}. My weight is ${userWeight} and my height is ${userHeight}. I prefer ${restrictions}. Could you help me create a meal plan?`,
     },
     {
       role: 'assistant',
-      content: `I understand that your name is ${userName} and you are ${userAge}. Your weight is ${userWeight}, height is ${userHeight}, and your daily calorie goal is ${calories}. You are looking for a meal plan for the next ${numDays} days and prefer ${restrictions}. Please let me know if you have any specific questions or preferences regarding the meal plan.`,
+      content: `I understand that your name is ${userName}. Your weight is ${userWeight}, height is ${userHeight}. You are looking for a meal plan and prefer ${restrictions}. Please let me know if you have any specific questions or preferences regarding the meal plan.`,
     },
   ];
 
