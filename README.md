@@ -1,4 +1,3 @@
-<!-- Project Logo -->
 <div align="center">
   <a href="https://github.com/Jay-Sung-Lim/Treasure-Meal-Planner">
     <img src="https://github.com/Jay-Sung-Lim/Treasure-Meal-Planner/assets/107202611/54bcc688-0460-4a6e-a243-44a1a0940165" alt="Logo" width="150" height="150" style="border-radius: 50%;   -webkit-box-shadow: -10px 0px 13px -7px #000000, 10px 0px 13px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0); box-shadow: -10px 0px 13px -7px #000000, 10px 0px 13px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);">
@@ -24,12 +23,8 @@
 <details>
   <summary>Table of Contents</summary>
   <ol>
-    <li>
-      <a href="#about-the-project">About The Project</a>
-      <ul>
-        <li><a href="#built-with">Built With</a></li>
-      </ul>
-    </li>
+    <li><a href="#about-the-project">About The Project</a></li>
+    <li><a href="#built-with">Built With</a></li>
     <li>
       <a href="#getting-started">Getting Started</a>
       <ul>
@@ -37,20 +32,21 @@
         <li><a href="#installation">Installation</a></li>
       </ul>
     </li>
+    <li><a href="#deployment">Deployment</a></li>
     <li><a href="#contributing">Contributing</a></li>
+    <li><a href="#license">License</a></li>
   </ol>
 </details>
 
-<!-- Abou the Project -->
-## About The Project
 
+# About The Project
 ![treasuremeals](https://github.com/Jay-Sung-Lim/Treasure-Meal-Planner/assets/107202611/a594fa22-84c2-4f80-88b0-84070db8e40d)
 Treasure Meal Planner utilizes OpenAI's Chat GPT to help you create your own meals. Since the Chat GPT is already assigned the role of a meal planner, it uses the information you provide (height, weight, dietary requirements, etc.) to provide optimized information.
 
 This project is based on OpenAI's official documentation and was submitted to the 2023 Treasure hacks 3.5 hackathon.
 
 
-### Built With
+# Built With
 ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
 ![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
@@ -62,14 +58,12 @@ This project is based on OpenAI's official documentation and was submitted to th
 ![Nodemon](https://img.shields.io/badge/NODEMON-%23323330.svg?style=for-the-badge&logo=nodemon&logoColor=%BBDEAD)
 
 
-## Getting Started
+# Getting Started
 
-### Prerequisites
-
+## Prerequisites
 * Get API Key at [https://platform.openai.com/](https://platform.openai.com/)
 
-### Installation
-
+## Installation
 1. Clone the repo
    ```
    git clone https://github.com/Jay-Sung-Lim/Treasure-Meal-Planner.git
@@ -83,9 +77,10 @@ This project is based on OpenAI's official documentation and was submitted to th
    OPENAI_API_KEY = YOUR_API_KEY_HERE
    ```
 
-<!-- Contributing -->
-## Contributing
+# Deployment
+The website is deployed and hosted on Cloudflare, ensuring high availability and fast loading times for users. You can access the live website at [https://treasuremeals.tech/](https://treasuremeals.tech/).
 
+# Contributing
 Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
 
 If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement".
@@ -96,3 +91,6 @@ Don't forget to give the project a star! Thanks again!
 3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
 4. Push to the Branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
+
+# License
+This project is licensed under the MIT License. See the `License.txt` file for details.
