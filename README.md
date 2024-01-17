@@ -3,7 +3,7 @@
     <img src="https://github.com/Jay-Sung-Lim/Treasure-Meal-Planner/assets/107202611/54bcc688-0460-4a6e-a243-44a1a0940165" alt="Logo" width="150" height="150" style="border-radius: 50%;   -webkit-box-shadow: -10px 0px 13px -7px #000000, 10px 0px 13px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0); box-shadow: -10px 0px 13px -7px #000000, 10px 0px 13px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);">
   </a>
 
-  <h3 align="center">Treasure Meal Planner</h3>
+  <h3 align="center">AI Meal Planner</h3>
 
   <p align="center">
     Plan your diet with Meal Planner ChatBot AI
@@ -41,7 +41,7 @@
 
 # About The Project
 ![treasuremeals](https://github.com/Jay-Sung-Lim/Treasure-Meal-Planner/assets/107202611/a594fa22-84c2-4f80-88b0-84070db8e40d)
-Treasure Meal Planner utilizes OpenAI's Chat GPT to help you create your own meals. Since the Chat GPT is already assigned the role of a meal planner, it uses the information you provide (height, weight, dietary requirements, etc.) to provide optimized information.
+This project utilizes OpenAI's Chat GPT to help you create your own meals. Since the Chat GPT is already assigned the role of a meal planner, it uses the information you provide (height, weight, dietary requirements, etc.) to provide optimized information.
 
 This project is based on OpenAI's official documentation and was submitted to the 2023 Treasure hacks 3.5 hackathon.
 
