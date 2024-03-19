@@ -11,7 +11,7 @@
     <a href="https://github.com/Jay-Sung-Lim/Treasure-Meal-Planner"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://treasuremeals.tech/">View Demo</a>
+    <a href="https://github.com/Jay-Sung-Lim/Treasure-Meal-Planner">View Demo</a>
     ·
     <a href="https://github.com/Jay-Sung-Lim/Treasure-Meal-Planner/issues">Report Bug</a>
     ·
